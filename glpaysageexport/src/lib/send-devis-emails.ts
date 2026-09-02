@@ -103,7 +103,7 @@ export async function sendClientConfirmationEmail(data: DevisFormData) {
       <div style="background:#f5f5f4;padding:32px 16px;font-family:sans-serif;">
         <div style="max-width:560px;margin:0 auto;">
           <div style="text-align:center;margin-bottom:24px;">
-            <img src="${siteConfig.url}/logo.png" alt="${escapeHtml(siteConfig.name)}" width="160" style="width:160px;height:auto;" />
+            <img src="${siteConfig.url}/logo-email.png" alt="${escapeHtml(siteConfig.name)}" width="160" style="width:160px;height:auto;" />
           </div>
 
           <div style="background:#ecfdf5;border-radius:24px;padding:32px;color:#1c1917;">
@@ -161,7 +161,7 @@ export async function sendBusinessNotificationEmail(
       <div style="background:#f5f5f4;padding:32px 16px;font-family:sans-serif;">
         <div style="max-width:560px;margin:0 auto;">
           <div style="text-align:center;margin-bottom:24px;">
-            <img src="${siteConfig.url}/logo.png" alt="${escapeHtml(siteConfig.name)}" width="160" style="width:160px;height:auto;" />
+            <img src="${siteConfig.url}/logo-email.png" alt="${escapeHtml(siteConfig.name)}" width="160" style="width:160px;height:auto;" />
           </div>
 
           <div style="background:#ecfdf5;border-radius:24px;padding:32px;color:#1c1917;">
