@@ -45,17 +45,7 @@ function recapRows(data: DevisFormData): { label: string; value: string }[] {
   ];
 }
 
-function recapHtml(data: DevisFormData): string {
-  const rows = recapRows(data)
-    .map(
-      (row) =>
-        `<tr><td style="padding:6px 12px 6px 0;color:#57534e;font-weight:600;white-space:nowrap;">${escapeHtml(row.label)}</td><td style="padding:6px 0;color:#1c1917;">${escapeHtml(row.value)}</td></tr>`,
-    )
-    .join("");
-  return `<table style="border-collapse:collapse;width:100%;font-family:sans-serif;font-size:14px;">${rows}</table>`;
-}
-
-function clientRecapHtml(data: DevisFormData): string {
+function recapTableHtml(data: DevisFormData): string {
   const rows = recapRows(data)
     .map(
       (row) => `
@@ -137,7 +127,7 @@ export async function sendClientConfirmationEmail(data: DevisFormData) {
           <p style="margin:32px 0 8px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#78716c;">
             Récapitulatif de votre demande
           </p>
-          ${clientRecapHtml(data)}
+          ${recapTableHtml(data)}
 
           <p style="margin:32px 0 0;text-align:center;font-size:13px;color:#a8a29e;">
             À très bientôt,<br />
@@ -168,16 +158,38 @@ export async function sendBusinessNotificationEmail(
     replyTo: { email: data.email, name: data.nom },
     subject: `Nouvelle demande de devis — ${data.nom}`,
     htmlContent: `
-      <div style="font-family:sans-serif;color:#1c1917;">
-        <p>Nouvelle demande de devis reçue via le site.</p>
-        ${recapHtml(data)}
-        ${
-          useAdminLink
-            ? `<p style="margin-top:16px;"><a href="${options.adminLink}" style="display:inline-block;background:#065f46;color:#fff;padding:10px 20px;border-radius:999px;text-decoration:none;">Voir la demande complète${data.photos.length > 0 ? ` (${data.photos.length} photo(s))` : ""}</a></p>`
-            : data.photos.length > 0
-              ? `<p style="margin-top:16px;">${data.photos.length} photo(s) jointe(s) à cet email.</p>`
-              : `<p style="margin-top:16px;">Aucune photo jointe.</p>`
-        }
+      <div style="background:#f5f5f4;padding:32px 16px;font-family:sans-serif;">
+        <div style="max-width:560px;margin:0 auto;">
+          <div style="text-align:center;margin-bottom:24px;">
+            <img src="${siteConfig.url}/logo.png" alt="${escapeHtml(siteConfig.name)}" width="160" style="width:160px;height:auto;" />
+          </div>
+
+          <div style="background:#ecfdf5;border-radius:24px;padding:32px;color:#1c1917;">
+            <p style="margin:0 0 16px;">Nouvelle demande de devis reçue via le site, de la part de
+              <strong>${escapeHtml(data.nom)}</strong>.
+            </p>
+            <p style="margin:0;line-height:1.6;">
+              Vous pouvez la joindre directement au
+              <strong style="color:#065f46;">${escapeHtml(data.telephone)}</strong>
+              ou en répondant à cet email.
+            </p>
+          </div>
+
+          <p style="margin:32px 0 8px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#78716c;">
+            Récapitulatif de la demande
+          </p>
+          ${recapTableHtml(data)}
+
+          ${
+            useAdminLink
+              ? `<div style="text-align:center;margin-top:24px;"><a href="${options.adminLink}" style="display:inline-block;background:#065f46;color:#fff;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:600;">Voir la demande complète${data.photos.length > 0 ? ` (${data.photos.length} photo(s))` : ""}</a></div>`
+              : `<p style="margin-top:16px;text-align:center;color:#57534e;font-size:13px;">${data.photos.length > 0 ? `${data.photos.length} photo(s) jointe(s) à cet email.` : "Aucune photo jointe."}</p>`
+          }
+
+          <p style="margin:32px 0 0;text-align:center;font-size:13px;color:#a8a29e;">
+            <strong style="color:#57534e;">${escapeHtml(siteConfig.name)}</strong>
+          </p>
+        </div>
       </div>
     `,
     attachment: useAdminLink
