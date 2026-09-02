@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
@@ -36,6 +37,7 @@ export default function AdminLoginPage() {
 
   return (
     <div className="mx-auto flex min-h-[70vh] max-w-sm flex-col justify-center px-4 py-16">
+      <Image src="/logo.png" alt={siteConfig.name} width={72} height={62} className="mb-4 h-14 w-auto" />
       <h1 className="text-2xl font-semibold text-stone-900">Espace admin</h1>
       <p className="mt-1 text-sm text-stone-600">Suivi des demandes de devis — {siteConfig.name}</p>
 
