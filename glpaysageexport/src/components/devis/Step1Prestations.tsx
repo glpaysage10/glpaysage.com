@@ -54,7 +54,7 @@ export default function Step1Prestations({ data, errors, onChange }: StepProps) 
           id="prestation-autre"
           type="text"
           className={inputClass}
-          placeholder="Précisez si votre besoin n'est pas listé ci-dessus"
+          placeholder="Précisez votre besoin"
           value={data.prestationAutre}
           onChange={(e) => onChange("prestationAutre", e.target.value)}
         />
