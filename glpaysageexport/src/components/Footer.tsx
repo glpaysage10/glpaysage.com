@@ -4,7 +4,6 @@ import { siteConfig } from "@/lib/site-config";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
-  { href: "/realisations", label: "Réalisations" },
   { href: "/a-propos", label: "À propos" },
   { href: "/avis-clients", label: "Avis clients" },
   { href: "/devis", label: "Demander un devis" },
