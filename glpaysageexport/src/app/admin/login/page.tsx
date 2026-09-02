@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { siteConfig } from "@/lib/site-config";
 
 const SUPABASE_CONFIGURED = Boolean(
   process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
@@ -36,7 +37,7 @@ export default function AdminLoginPage() {
   return (
     <div className="mx-auto flex min-h-[70vh] max-w-sm flex-col justify-center px-4 py-16">
       <h1 className="text-2xl font-semibold text-stone-900">Espace admin</h1>
-      <p className="mt-1 text-sm text-stone-600">Suivi des demandes de devis — GL Paysage</p>
+      <p className="mt-1 text-sm text-stone-600">Suivi des demandes de devis — {siteConfig.name}</p>
 
       {!SUPABASE_CONFIGURED ? (
         <p className="mt-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">

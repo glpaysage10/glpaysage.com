@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
 import FieldError from "./FieldError";
 import { inputClass, labelClass, type StepProps } from "./form-types";
 
@@ -78,7 +79,7 @@ export default function Step5Coordonnees({ data, errors, onChange }: StepProps) 
           onChange={(e) => onChange("rgpd", e.target.checked as true)}
         />
         <span className="text-sm text-stone-700">
-          J&apos;accepte que mes données soient utilisées par GL Paysage pour
+          J&apos;accepte que mes données soient utilisées par {siteConfig.name} pour
           traiter ma demande de devis, conformément à la{" "}
           <Link href="/confidentialite" className="font-medium text-emerald-800 underline">
             politique de confidentialité

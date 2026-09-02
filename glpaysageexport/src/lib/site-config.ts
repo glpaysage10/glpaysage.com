@@ -2,10 +2,10 @@
 // TODO: remplacer les valeurs marquées "à définir" dès qu'elles sont connues.
 
 export const siteConfig = {
-  name: "GL Paysage",
+  name: "GLPaysage",
   tagline: "Création et entretien de jardins en Aube, Yonne, Seine-et-Marne et Marne",
   description:
-    "GL Paysage, entreprise de paysagisme intervenant en Aube (10), Yonne (89), Seine-et-Marne (77) et Marne (51) : création de jardins, entretien, tonte, élagage, clôtures, terrasses et arrosage automatique.",
+    "GLPaysage, entreprise de paysagisme intervenant en Aube (10), Yonne (89), Seine-et-Marne (77) et Marne (51) : création de jardins, entretien, tonte, élagage de petits arbres et aménagement extérieur.",
   url: "https://www.glpaysage.com",
   phone: "06 47 15 70 52",
   phoneHref: "+33647157052",
