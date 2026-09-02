@@ -56,6 +56,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
+        <div
+          aria-hidden
+          className="pointer-events-none fixed -left-24 -top-24 -z-10 h-[26rem] w-[26rem] rounded-full bg-emerald-300/35 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none fixed -bottom-32 -right-24 -z-10 h-[30rem] w-[30rem] rounded-full bg-emerald-500/25 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none fixed left-1/3 top-1/2 -z-10 h-80 w-80 rounded-full bg-emerald-200/25 blur-3xl"
+        />
         {children}
       </body>
     </html>
