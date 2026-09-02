@@ -68,7 +68,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="leaf-pattern relative bg-cream py-16 sm:py-20">
+      <section className="leaf-pattern relative overflow-hidden bg-cream py-16 sm:py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-[15%] top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-emerald-300/30 blur-2xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute right-[10%] top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-emerald-200/30 blur-2xl"
+        />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid gap-8 sm:grid-cols-3">
             {trustPoints.map((point) => (
@@ -83,6 +91,14 @@ export default function Home() {
 
       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
         <div aria-hidden className="leaf-pattern pointer-events-none absolute inset-0" />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-[8%] top-1/4 h-36 w-36 rounded-full bg-emerald-100/60 blur-2xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute right-[12%] bottom-1/4 h-44 w-44 rounded-full bg-emerald-50 blur-2xl"
+        />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <SectionHeading
             eyebrow="Nos prestations"
@@ -97,7 +113,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="leaf-pattern relative bg-white py-16 sm:py-20">
+      <section className="leaf-pattern relative overflow-hidden bg-white py-16 sm:py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-[6%] top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-emerald-100/70 blur-xl"
+        />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <div className="relative flex flex-col items-center gap-4 overflow-hidden rounded-3xl bg-emerald-950 px-6 py-14 text-center text-white sm:px-16">
             <div aria-hidden className="leaf-pattern-dark pointer-events-none absolute inset-0" />
