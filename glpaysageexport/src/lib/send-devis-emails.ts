@@ -55,6 +55,19 @@ function recapHtml(data: DevisFormData): string {
   return `<table style="border-collapse:collapse;width:100%;font-family:sans-serif;font-size:14px;">${rows}</table>`;
 }
 
+function clientRecapHtml(data: DevisFormData): string {
+  const rows = recapRows(data)
+    .map(
+      (row) => `
+        <tr>
+          <td style="padding:8px 16px 8px 0;color:#44403c;font-weight:700;font-size:13px;white-space:nowrap;vertical-align:top;">${escapeHtml(row.label)}</td>
+          <td style="padding:8px 0;color:#065f46;font-size:14px;">${escapeHtml(row.value)}</td>
+        </tr>`,
+    )
+    .join("");
+  return `<table style="border-collapse:collapse;width:100%;font-family:sans-serif;">${rows}</table>`;
+}
+
 async function sendBrevoEmail(payload: Record<string, unknown>) {
   const apiKey = process.env.BREVO_API_KEY;
   if (!apiKey) {
@@ -90,23 +103,47 @@ function senderInfo() {
 
 export async function sendClientConfirmationEmail(data: DevisFormData) {
   const sender = senderInfo();
+  const prenom = data.nom.split(" ")[0] || data.nom;
+
   await sendBrevoEmail({
     sender,
     to: [{ email: data.email, name: data.nom }],
     subject: `Votre demande de devis — ${siteConfig.name}`,
     htmlContent: `
-      <div style="font-family:sans-serif;color:#1c1917;">
-        <p>Bonjour ${escapeHtml(data.nom)},</p>
-        <p>
-          Nous avons bien reçu votre demande de devis. Voici un récapitulatif des
-          informations transmises :
-        </p>
-        ${recapHtml(data)}
-        <p style="margin-top:16px;">
-          Nous revenons vers vous rapidement au ${escapeHtml(data.telephone)} ou par
-          email pour la suite de votre projet.
-        </p>
-        <p>À bientôt,<br>${escapeHtml(siteConfig.name)}</p>
+      <div style="background:#f5f5f4;padding:32px 16px;font-family:sans-serif;">
+        <div style="max-width:560px;margin:0 auto;">
+          <div style="text-align:center;margin-bottom:24px;">
+            <img src="${siteConfig.url}/logo.png" alt="${escapeHtml(siteConfig.name)}" width="160" style="width:160px;height:auto;" />
+          </div>
+
+          <div style="background:#ecfdf5;border-radius:24px;padding:32px;color:#1c1917;">
+            <p style="margin:0 0 16px;">Bonjour ${escapeHtml(prenom)},</p>
+            <p style="margin:0 0 16px;line-height:1.6;">
+              Merci pour votre demande ! Nous l'avons bien reçue et nous allons
+              l'étudier avec attention pour vous proposer un devis adapté à votre
+              projet.
+            </p>
+            <p style="margin:0 0 16px;line-height:1.6;">
+              Nous revenons vers vous <strong>sous peu</strong>, au ${escapeHtml(data.telephone)}
+              ou par email, pour affiner les détails si besoin et vous transmettre
+              votre devis.
+            </p>
+            <p style="margin:0;line-height:1.6;">
+              Une question en attendant ? Vous pouvez nous joindre directement au
+              <strong style="color:#065f46;">${escapeHtml(siteConfig.phone)}</strong>.
+            </p>
+          </div>
+
+          <p style="margin:32px 0 8px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#78716c;">
+            Récapitulatif de votre demande
+          </p>
+          ${clientRecapHtml(data)}
+
+          <p style="margin:32px 0 0;text-align:center;font-size:13px;color:#a8a29e;">
+            À très bientôt,<br />
+            <strong style="color:#57534e;">${escapeHtml(siteConfig.name)}</strong>
+          </p>
+        </div>
       </div>
     `,
   });
