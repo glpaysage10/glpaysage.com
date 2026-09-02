@@ -3,16 +3,23 @@
 
 export const siteConfig = {
   name: "GL Paysage",
-  tagline: "Création et entretien de jardins en Aube, Yonne et Seine-et-Marne",
+  tagline: "Création et entretien de jardins en Aube, Yonne, Seine-et-Marne et Marne",
   description:
-    "GL Paysage, entreprise de paysagisme intervenant en Aube (10), Yonne (89) et Seine-et-Marne (77) : création de jardins, entretien, tonte, élagage, clôtures, terrasses et arrosage automatique.",
+    "GL Paysage, entreprise de paysagisme intervenant en Aube (10), Yonne (89), Seine-et-Marne (77) et Marne (51) : création de jardins, entretien, tonte, élagage, clôtures, terrasses et arrosage automatique.",
   url: "https://www.glpaysage.com",
   phone: "06 47 15 70 52",
   phoneHref: "+33647157052",
   // TODO: remplacer par une adresse @glpaysage.com une fois la messagerie du domaine configurée
   email: "glpaysage10@gmail.com",
-  legalStatus: "Entreprise individuelle",
-  zones: ["Aube (10)", "Yonne (89)", "Seine-et-Marne (77)"],
+  legalStatus: "Entrepreneur individuel",
+  zones: ["Aube (10)", "Yonne (89)", "Seine-et-Marne (77)", "Marne (51)"],
+  legal: {
+    director: "Gauthier Lauxerrois",
+    siren: "990 003 550",
+    siret: "990 003 550 00011",
+    vatNumber: "FR60990003550",
+    headquartersAddress: "60 rue François 1er, 75008 Paris",
+  },
   socials: {
     facebook: "", // TODO
     instagram: "", // TODO

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/site-config";
 
 const footerLinks = [
@@ -21,7 +22,9 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
           <p className="flex items-center gap-2 text-lg font-bold">
-            <span aria-hidden>🌿</span>
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white">
+              <Image src="/logo.png" alt={siteConfig.name} width={28} height={24} className="h-6 w-auto" />
+            </span>
             {siteConfig.name}
           </p>
           <p className="mt-3 max-w-xs text-sm text-emerald-100/80">
