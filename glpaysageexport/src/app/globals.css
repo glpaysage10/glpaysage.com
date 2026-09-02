@@ -22,19 +22,27 @@ body {
   background-color: var(--background);
   background-image: var(--leaf-pattern);
   background-repeat: repeat;
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-body), system-ui, sans-serif;
 }
 
-/* Même motif de feuilles, réutilisable sur les sections qui ont leur propre fond opaque. */
+/*
+ * Même motif de feuilles, réutilisable sur les sections qui ont leur propre
+ * fond opaque. background-attachment: fixed ancre le motif au viewport
+ * plutôt qu'à chaque élément : les tuiles restent alignées d'une section à
+ * l'autre au lieu de repartir de zéro à chaque conteneur (faux raccords).
+ */
 .leaf-pattern {
   background-image: var(--leaf-pattern);
   background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .leaf-pattern-dark {
   background-image: var(--leaf-pattern-dark);
   background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 h1,
