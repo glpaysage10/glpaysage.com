@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site-config";
 
 const navLinks = [
+  { href: "/", label: "Accueil" },
   { href: "/services", label: "Services" },
   { href: "/a-propos", label: "À propos" },
   { href: "/avis-clients", label: "Avis clients" },
