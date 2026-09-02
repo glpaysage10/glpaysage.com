@@ -5,8 +5,33 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Avis clients",
-  description: `Avis et témoignages clients de ${siteConfig.name} — bientôt disponibles.`,
+  description: `Avis clients de ${siteConfig.name}.`,
 };
+
+const reviews = [
+  { name: "François D.", rating: 5 },
+  { name: "Pierre", rating: 5 },
+  { name: "Julien L.", rating: 5 },
+  { name: "Jean-Marie O.", rating: 5 },
+  { name: "Léonard", rating: 5 },
+];
+
+function Stars({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-0.5" aria-label={`Note : ${rating} sur 5`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <svg
+          key={i}
+          viewBox="0 0 20 20"
+          className={`h-5 w-5 ${i < rating ? "fill-amber-400" : "fill-stone-200"}`}
+          aria-hidden
+        >
+          <path d="M10 1.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8L10 1.5z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
 
 export default function AvisClientsPage() {
   return (
@@ -14,9 +39,21 @@ export default function AvisClientsPage() {
       <SectionHeading
         align="center"
         eyebrow="Avis clients"
-        title="Les avis de nos clients arrivent bientôt"
-        description="Cette page rassemblera les retours de nos clients au fil des chantiers réalisés."
+        title="Ce que disent nos clients"
+        description="Des retours de clients accompagnés sur leurs projets de jardin."
       />
+
+      <div className="mt-12 grid gap-4 sm:grid-cols-2">
+        {reviews.map((review) => (
+          <div
+            key={review.name}
+            className="flex items-center justify-between rounded-2xl border border-emerald-900/10 bg-white p-5"
+          >
+            <span className="font-medium text-stone-900">{review.name}</span>
+            <Stars rating={review.rating} />
+          </div>
+        ))}
+      </div>
 
       <div className="mt-12 flex flex-col items-center gap-4 rounded-3xl bg-emerald-50 px-6 py-12 text-center">
         <h2 className="text-xl font-semibold text-stone-900">
