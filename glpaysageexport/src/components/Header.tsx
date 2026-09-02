@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site-config";
@@ -21,7 +22,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-emerald-900/10 bg-cream/95 backdrop-blur supports-[backdrop-filter]:bg-cream/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight text-emerald-900" onClick={() => setOpen(false)}>
-          <span aria-hidden className="text-2xl">🌿</span>
+          <Image src="/logo.png" alt={siteConfig.name} width={40} height={35} className="h-9 w-auto" priority />
           {siteConfig.name}
         </Link>
 
