@@ -1,0 +1,79 @@
+// Configuration centrale du site — à mettre à jour au fil du projet.
+// TODO: remplacer les valeurs marquées "à définir" dès qu'elles sont connues.
+
+export const siteConfig = {
+  name: "GL Paysage",
+  tagline: "Création et entretien de jardins en Aube, Yonne et Seine-et-Marne",
+  description:
+    "GL Paysage, entreprise de paysagisme intervenant en Aube (10), Yonne (89) et Seine-et-Marne (77) : création de jardins, entretien, tonte, élagage, clôtures, terrasses et arrosage automatique.",
+  url: "https://www.glpaysage.com",
+  phone: "06 47 15 70 52",
+  phoneHref: "+33647157052",
+  // TODO: remplacer par une adresse @glpaysage.com une fois la messagerie du domaine configurée
+  email: "glpaysage10@gmail.com",
+  legalStatus: "Entreprise individuelle",
+  zones: ["Aube (10)", "Yonne (89)", "Seine-et-Marne (77)"],
+  socials: {
+    facebook: "", // TODO
+    instagram: "", // TODO
+  },
+} as const;
+
+export const services = [
+  {
+    slug: "creation-de-jardin",
+    title: "Création de jardin",
+    short: "Conception et aménagement complet de votre extérieur, du terrain nu au jardin fini.",
+    description:
+      "De l'étude du terrain au résultat final : plantations, engazonnement, massifs, allées. Un accompagnement complet pour donner vie à votre projet de jardin, quel que soit son point de départ.",
+  },
+  {
+    slug: "entretien-de-jardin",
+    title: "Entretien régulier",
+    short: "Un jardin bien tenu toute l'année, sans y penser.",
+    description:
+      "Passages réguliers ou ponctuels pour garder votre jardin impeccable : désherbage, taille des massifs, nettoyage des espaces verts, entretien des allées.",
+  },
+  {
+    slug: "tonte",
+    title: "Tonte de pelouse",
+    short: "Tonte régulière ou ponctuelle, avec ou sans ramassage.",
+    description:
+      "Intervention ponctuelle ou sur contrat à l'année pour une pelouse impeccable, adaptée à la surface et à la configuration de votre terrain.",
+  },
+  {
+    slug: "taille-elagage",
+    title: "Taille & élagage",
+    short: "Taille de haies, d'arbustes et élagage d'arbres en toute sécurité.",
+    description:
+      "Taille de formation ou d'entretien pour haies et arbustes, élagage d'arbres pour la sécurité et l'esthétique, évacuation des déchets verts.",
+  },
+  {
+    slug: "cloture-portail",
+    title: "Clôture & portail",
+    short: "Pose de clôtures, portails et brise-vues sur mesure.",
+    description:
+      "Installation de clôtures (bois, PVC, grillage rigide...), portails et brise-vues, adaptés à votre terrain et à vos besoins en intimité et sécurité.",
+  },
+  {
+    slug: "terrasse-amenagement",
+    title: "Terrasse & aménagement extérieur",
+    short: "Terrasses, allées, dallages : vos extérieurs pensés pour être vécus.",
+    description:
+      "Conception et pose de terrasses (bois, composite, dallage), allées et petits aménagements extérieurs pour profiter pleinement de votre jardin.",
+  },
+  {
+    slug: "arrosage-automatique",
+    title: "Arrosage automatique",
+    short: "Installation de systèmes d'arrosage automatique sur mesure.",
+    description:
+      "Étude, installation et réglage d'un système d'arrosage automatique adapté à votre jardin, pour un entretien facilité et une eau utilisée à bon escient.",
+  },
+  {
+    slug: "debroussaillage",
+    title: "Débroussaillage",
+    short: "Remise en état de terrains envahis ou difficiles d'accès.",
+    description:
+      "Débroussaillage de terrains, friches ou parcelles peu entretenues, pour préparer un nouveau projet ou répondre à une obligation légale de débroussaillement.",
+  },
+] as const;

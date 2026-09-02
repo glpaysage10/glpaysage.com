@@ -1,0 +1,114 @@
+import CtaButton from "@/components/CtaButton";
+import SectionHeading from "@/components/SectionHeading";
+import ServiceCard from "@/components/ServiceCard";
+import { services, siteConfig } from "@/lib/site-config";
+
+const trustPoints = [
+  {
+    title: "Devis clair et rapide",
+    description: "Un formulaire guidé pour un devis chiffré sans allers-retours inutiles.",
+  },
+  {
+    title: "Intervention locale",
+    description: `Basés au cœur de la zone ${siteConfig.zones.join(", ")}.`,
+  },
+  {
+    title: "Un interlocuteur unique",
+    description: "Du premier contact à la fin du chantier, vous échangez toujours avec la même personne.",
+  },
+];
+
+export default function Home() {
+  return (
+    <>
+      <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-cream">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:py-32">
+          <div className="flex flex-col gap-6">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-semibold text-emerald-800">
+              Paysagiste — {siteConfig.zones.join(" · ")}
+            </span>
+            <h1 className="text-4xl font-semibold leading-tight text-stone-900 sm:text-5xl">
+              Un jardin à votre image, du premier coup de bêche au dernier détail
+            </h1>
+            <p className="max-w-xl text-lg text-stone-600">
+              {siteConfig.name} conçoit, aménage et entretient vos espaces extérieurs.
+              Décrivez votre projet en quelques étapes, nous revenons vers vous avec un
+              devis adapté.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <CtaButton href="/devis">Demander un devis gratuit</CtaButton>
+              <CtaButton href="/services" variant="secondary">
+                Découvrir nos prestations
+              </CtaButton>
+            </div>
+          </div>
+
+          <div className="relative isolate">
+            <div
+              aria-hidden
+              className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-700 via-emerald-800 to-emerald-950 shadow-xl"
+            >
+              <svg
+                viewBox="0 0 200 200"
+                className="h-2/3 w-2/3 text-emerald-400/40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <path d="M100 180C60 160 40 120 40 80c0-30 20-50 60-60 40 10 60 30 60 60 0 40-20 80-60 100Z" />
+                <path d="M100 20v160" />
+                <path d="M100 60c-20 5-30 20-30 35" />
+                <path d="M100 90c20 5 32 18 32 35" />
+                <path d="M100 120c-18 4-26 16-26 30" />
+              </svg>
+              <span className="absolute bottom-4 right-4 rounded-full bg-black/20 px-3 py-1 text-xs font-medium text-white/80">
+                Photos de réalisations à venir
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="grid gap-8 sm:grid-cols-3">
+          {trustPoints.map((point) => (
+            <div key={point.title} className="flex flex-col gap-2">
+              <h3 className="text-lg font-semibold text-stone-900">{point.title}</h3>
+              <p className="text-sm text-stone-600">{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionHeading
+            eyebrow="Nos prestations"
+            title="Des services pour chaque projet extérieur"
+            description="De l'entretien courant à la création complète de jardin, nous intervenons à chaque étape."
+          />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {services.slice(0, 8).map((service) => (
+              <ServiceCard key={service.slug} service={service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="flex flex-col items-center gap-4 rounded-3xl bg-emerald-950 px-6 py-14 text-center text-white sm:px-16">
+          <h2 className="text-3xl font-semibold sm:text-4xl">
+            Prêt à démarrer votre projet ?
+          </h2>
+          <p className="max-w-xl text-emerald-100/80">
+            Remplissez notre formulaire en quelques étapes : type de travaux, photos,
+            budget. Nous vous recontactons avec un devis adapté.
+          </p>
+          <CtaButton href="/devis" className="mt-2">
+            Demander un devis gratuit
+          </CtaButton>
+        </div>
+      </section>
+    </>
+  );
+}
