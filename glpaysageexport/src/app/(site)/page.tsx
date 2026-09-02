@@ -68,8 +68,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="leaf-pattern relative bg-cream py-16 sm:py-20">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid gap-8 sm:grid-cols-3">
             {trustPoints.map((point) => (
               <div key={point.title} className="flex flex-col gap-2">
