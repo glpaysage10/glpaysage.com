@@ -44,31 +44,21 @@ export default function AboutPage() {
         ))}
       </div>
 
-      <div className="mt-16 grid gap-10 sm:grid-cols-2">
-        <div>
-          <h2 className="text-2xl font-semibold text-stone-900">Zone d&apos;intervention</h2>
-          <p className="mt-3 text-stone-600">
-            {siteConfig.name} intervient dans les départements suivants :
-          </p>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {siteConfig.zones.map((zone) => (
-              <li
-                key={zone}
-                className="rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-medium text-emerald-800"
-              >
-                {zone}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-2xl font-semibold text-stone-900">Assurances & garanties</h2>
-          <p className="mt-3 text-stone-600">
-            Informations sur l&apos;assurance responsabilité civile professionnelle et,
-            le cas échéant, la garantie décennale, à venir prochainement sur cette page.
-          </p>
-        </div>
+      <div className="mt-16 flex flex-col items-center text-center">
+        <h2 className="text-2xl font-semibold text-stone-900">Zone d&apos;intervention</h2>
+        <p className="mt-3 text-stone-600">
+          {siteConfig.name} intervient dans les départements suivants :
+        </p>
+        <ul className="mt-3 flex flex-wrap justify-center gap-2">
+          {siteConfig.zones.map((zone) => (
+            <li
+              key={zone}
+              className="rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-medium text-emerald-800"
+            >
+              {zone}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl bg-emerald-50 px-6 py-12 text-center sm:px-16">
