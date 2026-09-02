@@ -50,31 +50,17 @@ export const services = [
   },
   {
     slug: "taille-elagage",
-    title: "Taille & élagage",
-    short: "Taille de haies, d'arbustes et élagage d'arbres en toute sécurité.",
+    title: "Taille & élagage de petits arbres",
+    short: "Taille de haies, d'arbustes et élagage de petits arbres en toute sécurité.",
     description:
-      "Taille de formation ou d'entretien pour haies et arbustes, élagage d'arbres pour la sécurité et l'esthétique, évacuation des déchets verts.",
+      "Taille de formation ou d'entretien pour haies et arbustes, élagage de petits arbres pour la sécurité et l'esthétique, évacuation des déchets verts.",
   },
   {
-    slug: "cloture-portail",
-    title: "Clôture & portail",
-    short: "Pose de clôtures, portails et brise-vues sur mesure.",
+    slug: "amenagement-exterieur",
+    title: "Aménagement extérieur",
+    short: "Allées, cheminements et aménagements extérieurs pensés pour être vécus.",
     description:
-      "Installation de clôtures (bois, PVC, grillage rigide...), portails et brise-vues, adaptés à votre terrain et à vos besoins en intimité et sécurité.",
-  },
-  {
-    slug: "terrasse-amenagement",
-    title: "Terrasse & aménagement extérieur",
-    short: "Terrasses, allées, dallages : vos extérieurs pensés pour être vécus.",
-    description:
-      "Conception et pose de terrasses (bois, composite, dallage), allées et petits aménagements extérieurs pour profiter pleinement de votre jardin.",
-  },
-  {
-    slug: "arrosage-automatique",
-    title: "Arrosage automatique",
-    short: "Installation de systèmes d'arrosage automatique sur mesure.",
-    description:
-      "Étude, installation et réglage d'un système d'arrosage automatique adapté à votre jardin, pour un entretien facilité et une eau utilisée à bon escient.",
+      "Conception d'allées, cheminements et petits aménagements extérieurs pour profiter pleinement de votre jardin.",
   },
   {
     slug: "debroussaillage",
