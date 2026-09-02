@@ -48,6 +48,10 @@ export default function Home() {
           <div className="relative isolate">
             <div
               aria-hidden
+              className="pointer-events-none absolute -inset-8 -z-10 rounded-[2.5rem] bg-emerald-400/40 blur-3xl"
+            />
+            <div
+              aria-hidden
               className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-700 via-emerald-800 to-emerald-950 p-4 shadow-xl"
             >
               <div className="flex h-full w-full items-center justify-center rounded-2xl bg-white p-6">
