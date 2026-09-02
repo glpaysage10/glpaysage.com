@@ -48,9 +48,9 @@ export default function Home() {
           <div className="relative isolate">
             <div
               aria-hidden
-              className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-700 via-emerald-800 to-emerald-950 shadow-xl"
+              className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-700 via-emerald-800 to-emerald-950 p-4 shadow-xl"
             >
-              <div className="flex aspect-square w-2/3 max-w-64 items-center justify-center rounded-full bg-white p-8 shadow-lg">
+              <div className="flex h-full w-full items-center justify-center rounded-2xl bg-white p-6">
                 <Image
                   src="/logo.png"
                   alt={siteConfig.name}
@@ -59,9 +59,6 @@ export default function Home() {
                   className="h-full w-full object-contain"
                 />
               </div>
-              <span className="absolute bottom-4 right-4 rounded-full bg-black/20 px-3 py-1 text-xs font-medium text-white/80">
-                Photos de réalisations à venir
-              </span>
             </div>
           </div>
         </div>
