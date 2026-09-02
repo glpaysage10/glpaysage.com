@@ -23,6 +23,7 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-cream">
+        <div aria-hidden className="leaf-pattern pointer-events-none absolute inset-0" />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:py-32">
           <div className="flex flex-col gap-6">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-semibold text-emerald-800">
@@ -84,6 +85,7 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
+        <div aria-hidden className="leaf-pattern pointer-events-none absolute inset-0" />
         <div
           aria-hidden
           className="pointer-events-none absolute -right-24 top-1/3 h-80 w-80 rounded-full bg-emerald-100/70 blur-3xl"
@@ -108,6 +110,7 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="relative flex flex-col items-center gap-4 overflow-hidden rounded-3xl bg-emerald-950 px-6 py-14 text-center text-white sm:px-16">
+          <div aria-hidden className="leaf-pattern-dark pointer-events-none absolute inset-0" />
           <div
             aria-hidden
             className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl"

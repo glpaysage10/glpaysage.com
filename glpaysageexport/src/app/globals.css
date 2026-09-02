@@ -13,10 +13,28 @@
   --font-display: var(--font-display);
 }
 
+:root {
+  --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cg fill='none' stroke='%231c4532' stroke-width='2' stroke-opacity='0.16'%3E%3Cg transform='translate(25,30) rotate(-20) scale(1.1)'%3E%3Cpath d='M0 40 C-15 25 -15 5 0 -10 C15 5 15 25 0 40 Z'/%3E%3Cpath d='M0 -10 L0 40'/%3E%3C/g%3E%3Cg transform='translate(120,110) rotate(35) scale(0.9)'%3E%3Cpath d='M0 40 C-15 25 -15 5 0 -10 C15 5 15 25 0 40 Z'/%3E%3Cpath d='M0 -10 L0 40'/%3E%3C/g%3E%3Cg transform='translate(115,20) rotate(80) scale(0.6)'%3E%3Cpath d='M0 40 C-15 25 -15 5 0 -10 C15 5 15 25 0 40 Z'/%3E%3Cpath d='M0 -10 L0 40'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  --leaf-pattern-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='2' stroke-opacity='0.12'%3E%3Cg transform='translate(25,30) rotate(-20) scale(1.1)'%3E%3Cpath d='M0 40 C-15 25 -15 5 0 -10 C15 5 15 25 0 40 Z'/%3E%3Cpath d='M0 -10 L0 40'/%3E%3C/g%3E%3Cg transform='translate(120,110) rotate(35) scale(0.9)'%3E%3Cpath d='M0 40 C-15 25 -15 5 0 -10 C15 5 15 25 0 40 Z'/%3E%3Cpath d='M0 -10 L0 40'/%3E%3C/g%3E%3Cg transform='translate(115,20) rotate(80) scale(0.6)'%3E%3Cpath d='M0 40 C-15 25 -15 5 0 -10 C15 5 15 25 0 40 Z'/%3E%3Cpath d='M0 -10 L0 40'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: var(--leaf-pattern);
+  background-repeat: repeat;
   color: var(--foreground);
   font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Même motif de feuilles, réutilisable sur les sections qui ont leur propre fond opaque. */
+.leaf-pattern {
+  background-image: var(--leaf-pattern);
+  background-repeat: repeat;
+}
+
+.leaf-pattern-dark {
+  background-image: var(--leaf-pattern-dark);
+  background-repeat: repeat;
 }
 
 h1,
