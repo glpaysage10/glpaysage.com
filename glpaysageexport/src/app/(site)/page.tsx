@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CtaButton from "@/components/CtaButton";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
@@ -48,19 +49,15 @@ export default function Home() {
               aria-hidden
               className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-700 via-emerald-800 to-emerald-950 shadow-xl"
             >
-              <svg
-                viewBox="0 0 200 200"
-                className="h-2/3 w-2/3 text-emerald-400/40"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path d="M100 180C60 160 40 120 40 80c0-30 20-50 60-60 40 10 60 30 60 60 0 40-20 80-60 100Z" />
-                <path d="M100 20v160" />
-                <path d="M100 60c-20 5-30 20-30 35" />
-                <path d="M100 90c20 5 32 18 32 35" />
-                <path d="M100 120c-18 4-26 16-26 30" />
-              </svg>
+              <div className="flex aspect-square w-2/3 max-w-64 items-center justify-center rounded-full bg-white p-8 shadow-lg">
+                <Image
+                  src="/logo.png"
+                  alt={siteConfig.name}
+                  width={400}
+                  height={346}
+                  className="h-full w-full object-contain"
+                />
+              </div>
               <span className="absolute bottom-4 right-4 rounded-full bg-black/20 px-3 py-1 text-xs font-medium text-white/80">
                 Photos de réalisations à venir
               </span>
