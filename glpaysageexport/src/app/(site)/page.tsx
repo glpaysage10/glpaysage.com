@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-cream">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:py-32">
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:py-32">
           <div className="flex flex-col gap-6">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-semibold text-emerald-800">
               Paysagiste — {siteConfig.zones.join(" · ")}
@@ -66,19 +66,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid gap-8 sm:grid-cols-3">
-          {trustPoints.map((point) => (
-            <div key={point.title} className="flex flex-col gap-2">
-              <h3 className="text-lg font-semibold text-stone-900">{point.title}</h3>
-              <p className="text-sm text-stone-600">{point.description}</p>
-            </div>
-          ))}
+      <section className="relative overflow-hidden py-16 sm:py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -left-20 top-0 h-72 w-72 rounded-full bg-emerald-200/40 blur-3xl"
+        />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid gap-8 sm:grid-cols-3">
+            {trustPoints.map((point) => (
+              <div key={point.title} className="flex flex-col gap-2">
+                <h3 className="text-lg font-semibold text-stone-900">{point.title}</h3>
+                <p className="text-sm text-stone-600">{point.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 top-1/3 h-80 w-80 rounded-full bg-emerald-100/70 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-emerald-50 blur-3xl"
+        />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <SectionHeading
             eyebrow="Nos prestations"
             title="Des services pour chaque projet extérieur"
@@ -93,15 +107,19 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="flex flex-col items-center gap-4 rounded-3xl bg-emerald-950 px-6 py-14 text-center text-white sm:px-16">
-          <h2 className="text-3xl font-semibold sm:text-4xl">
+        <div className="relative flex flex-col items-center gap-4 overflow-hidden rounded-3xl bg-emerald-950 px-6 py-14 text-center text-white sm:px-16">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl"
+          />
+          <h2 className="relative text-3xl font-semibold sm:text-4xl">
             Prêt à démarrer votre projet ?
           </h2>
-          <p className="max-w-xl text-emerald-100/80">
+          <p className="relative max-w-xl text-emerald-100/80">
             Remplissez notre formulaire en quelques étapes : type de travaux, photos,
             budget. Nous vous recontactons avec un devis adapté.
           </p>
-          <CtaButton href="/devis" className="mt-2">
+          <CtaButton href="/devis" className="relative mt-2">
             Demander un devis gratuit
           </CtaButton>
         </div>
