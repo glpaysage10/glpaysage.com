@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Avis clients",
   description: `Avis clients de ${siteConfig.name}.`,
+  alternates: { canonical: "/avis-clients" },
 };
 
 const reviews = [

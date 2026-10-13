@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CtaButton from "@/components/CtaButton";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/lib/site-config";
@@ -6,6 +7,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "À propos",
   description: `Découvrez ${siteConfig.name}, entreprise de paysagisme intervenant en ${siteConfig.zones.join(", ")}.`,
+  alternates: { canonical: "/a-propos" },
 };
 
 const values = [
@@ -32,7 +34,7 @@ export default function AboutPage() {
       <SectionHeading
         eyebrow="À propos"
         title={`${siteConfig.name}, votre paysagiste de proximité`}
-        description={`${siteConfig.name} (${siteConfig.legalStatus}) accompagne particuliers et professionnels dans la création et l'entretien de leurs espaces extérieurs, en ${siteConfig.zones.join(", ")}.`}
+        description={`${siteConfig.name} (${siteConfig.legalStatus}), dirigé par ${siteConfig.legal.director}, accompagne particuliers et professionnels dans la création et l'entretien de leurs espaces extérieurs, en ${siteConfig.zones.join(", ")}.`}
       />
 
       <div className="mt-12 grid gap-6 sm:grid-cols-3">
@@ -59,6 +61,12 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
+        <Link
+          href="/zone-intervention"
+          className="mt-4 text-sm font-semibold text-emerald-800 underline hover:text-emerald-900"
+        >
+          Voir le détail de la zone d&apos;intervention
+        </Link>
       </div>
 
       <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl bg-emerald-50 px-6 py-12 text-center sm:px-16">

@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import CtaButton from "@/components/CtaButton";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import { services, siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const trustPoints = [
   {
@@ -78,9 +83,14 @@ export default function Home() {
           className="pointer-events-none absolute right-[10%] top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-emerald-200/50 blur-2xl"
         />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid gap-8 sm:grid-cols-3">
+          <SectionHeading
+            align="center"
+            eyebrow="Pourquoi nous choisir"
+            title="Pourquoi choisir GLPaysage ?"
+          />
+          <div className="mt-10 grid gap-8 sm:grid-cols-3">
             {trustPoints.map((point) => (
-              <div key={point.title} className="flex flex-col gap-2">
+              <div key={point.title} className="flex flex-col gap-2 text-center sm:text-left">
                 <h3 className="text-lg font-semibold text-stone-900">{point.title}</h3>
                 <p className="text-sm text-stone-600">{point.description}</p>
               </div>

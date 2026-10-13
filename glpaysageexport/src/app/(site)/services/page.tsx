@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import CtaButton from "@/components/CtaButton";
 import SectionHeading from "@/components/SectionHeading";
+import ServiceCard from "@/components/ServiceCard";
 import { services, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Nos services",
   description: `Toutes les prestations de paysagisme proposées par ${siteConfig.name} en ${siteConfig.zones.join(", ")}.`,
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {
@@ -14,22 +16,12 @@ export default function ServicesPage() {
       <SectionHeading
         eyebrow="Nos services"
         title="Une prestation pour chaque besoin de votre extérieur"
-        description="Que vous partiez d'un terrain nu ou souhaitiez simplement garder un jardin impeccable, nous adaptons notre intervention à votre projet."
+        description="Que vous partiez d'un terrain nu ou souhaitiez simplement garder un jardin impeccable, nous adaptons notre intervention à votre projet. Cliquez sur une prestation pour en savoir plus."
       />
 
-      <div className="mt-12 flex flex-col divide-y divide-emerald-900/10">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <article key={service.slug} id={service.slug} className="scroll-mt-24 py-8 first:pt-0">
-            <div className="grid gap-4 sm:grid-cols-[1fr_2fr] sm:gap-10">
-              <h2 className="text-2xl font-semibold text-stone-900">{service.title}</h2>
-              <div className="flex flex-col gap-4">
-                <p className="text-base text-stone-600">{service.description}</p>
-                <CtaButton href="/devis" variant="secondary" className="w-fit">
-                  Demander un devis pour ce service
-                </CtaButton>
-              </div>
-            </div>
-          </article>
+          <ServiceCard key={service.slug} service={service} />
         ))}
       </div>
 
@@ -46,3 +38,4 @@ export default function ServicesPage() {
     </div>
   );
 }
+

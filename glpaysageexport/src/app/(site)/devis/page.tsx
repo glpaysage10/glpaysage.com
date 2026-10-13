@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Demander un devis",
   description: `Demandez un devis gratuit à ${siteConfig.name} pour votre projet de paysagisme.`,
+  alternates: { canonical: "/devis" },
 };
 
 export default function DevisPage() {

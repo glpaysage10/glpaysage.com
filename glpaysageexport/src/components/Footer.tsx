@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
+  { href: "/zone-intervention", label: "Zone d'intervention" },
   { href: "/a-propos", label: "À propos" },
   { href: "/avis-clients", label: "Avis clients" },
   { href: "/devis", label: "Demander un devis" },
@@ -30,7 +31,11 @@ export default function Footer() {
             {siteConfig.tagline}.
           </p>
           <p className="mt-4 text-sm text-emerald-100/80">
-            Zone d&apos;intervention : {siteConfig.zones.join(", ")}.
+            Zone d&apos;intervention :{" "}
+            <Link href="/zone-intervention" className="underline hover:text-white">
+              {siteConfig.zones.join(", ")}
+            </Link>
+            .
           </p>
         </div>
 
