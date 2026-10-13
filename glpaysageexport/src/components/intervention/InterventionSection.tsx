@@ -8,7 +8,7 @@ export default function InterventionSection() {
       <SectionHeading
         eyebrow="Notre zone d'intervention"
         title="Un projet près de chez vous ?"
-        description="Création, entretien et aménagement paysager : contactez GLPaysage pour vérifier nos possibilités d'intervention dans votre commune."
+        description="Entretien de jardins et d'espaces verts : contactez GLPaysage pour vérifier nos possibilités d'intervention dans votre commune."
       />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-stretch">

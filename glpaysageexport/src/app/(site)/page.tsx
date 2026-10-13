@@ -7,7 +7,7 @@ import Stars from "@/components/Stars";
 import { reviews, services, siteConfig, zoneNames } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  description: `${siteConfig.name}, paysagiste en ${zoneNames} : création et entretien de jardins, tonte, taille, aménagement extérieur. Devis gratuit.`,
+  description: `${siteConfig.name}, entretien de jardins et espaces verts en ${zoneNames} : tonte, taille, élagage, débroussaillage. Devis gratuit.`,
   alternates: { canonical: "/" },
 };
 
@@ -45,15 +45,15 @@ export default function Home() {
         />
         <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-14 text-center sm:px-6 sm:py-16">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-semibold text-emerald-800">
-            Paysagiste — {siteConfig.zones.join(" · ")}
+            Entretien de jardins — {siteConfig.zones.join(" · ")}
           </span>
           <h1 className="max-w-2xl text-3xl font-semibold leading-tight text-stone-900 sm:text-4xl lg:text-5xl">
-            Un jardin à votre image, du premier coup de bêche au dernier détail
+            Un jardin impeccable, entretenu avec soin toute l&apos;année
           </h1>
           <p className="max-w-xl text-lg text-stone-600">
-            {siteConfig.name} conçoit, aménage et entretient vos espaces extérieurs.
-            Décrivez votre projet en quelques étapes, nous revenons vers vous avec un
-            devis adapté.
+            {siteConfig.name} entretient vos jardins et espaces verts tout au long de
+            l&apos;année. Décrivez votre besoin en quelques étapes, nous revenons vers
+            vous avec un devis adapté.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <CtaButton href="/devis">Demander un devis gratuit</CtaButton>
@@ -96,10 +96,10 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionHeading
             eyebrow="Nos prestations"
-            title="Des services pour chaque projet extérieur"
-            description="De l'entretien courant à la création complète de jardin, nous intervenons à chaque étape."
+            title="Des solutions d'entretien pour chaque jardin"
+            description="Entretien ponctuel ou régulier, nous adaptons nos passages à votre jardin et à vos besoins."
           />
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <ServiceCard key={service.slug} service={service} />
             ))}

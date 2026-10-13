@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "À propos",
-  description: `Découvrez ${siteConfig.name}, entreprise de paysagisme intervenant en ${siteConfig.zones.join(", ")}.`,
+  description: `Découvrez ${siteConfig.name}, entreprise d'entretien de jardins et d'espaces verts intervenant en ${siteConfig.zones.join(", ")}.`,
   alternates: { canonical: "/a-propos" },
 };
 
@@ -34,8 +34,8 @@ export default function AboutPage() {
       <SectionHeading
         as="h1"
         eyebrow="À propos"
-        title={`${siteConfig.name}, votre paysagiste de proximité`}
-        description={`${siteConfig.name} (${siteConfig.legalStatus}), dirigé par ${siteConfig.legal.director}, accompagne particuliers et professionnels dans la création et l'entretien de leurs espaces extérieurs, en ${siteConfig.zones.join(", ")}.`}
+        title={`${siteConfig.name}, votre spécialiste de l'entretien de jardin`}
+        description={`${siteConfig.name} (${siteConfig.legalStatus}), dirigé par ${siteConfig.legal.director}, accompagne particuliers et professionnels dans l'entretien de leurs jardins et espaces verts, en ${siteConfig.zones.join(", ")}.`}
       />
 
       <div className="mt-12 grid gap-6 sm:grid-cols-3">

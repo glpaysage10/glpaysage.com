@@ -3,9 +3,9 @@
 
 export const siteConfig = {
   name: "GLPaysage",
-  tagline: "Création et entretien de jardins en Aube, Yonne, Seine-et-Marne et Marne",
+  tagline: "Entretien de jardins et espaces verts en Aube, Yonne, Seine-et-Marne et Marne",
   description:
-    "GLPaysage, entreprise de paysagisme intervenant en Aube (10), Yonne (89), Seine-et-Marne (77) et Marne (51) : création de jardins, entretien, tonte, élagage de petits arbres et aménagement extérieur.",
+    "GLPaysage, entreprise d'entretien de jardins et d'espaces verts en Aube (10), Yonne (89), Seine-et-Marne (77) et Marne (51) : tonte, taille, débroussaillage.",
   url: "https://www.glpaysage.com",
   phone: "06 47 15 70 52",
   phoneHref: "+33647157052",
@@ -43,30 +43,6 @@ export const reviews = [
 ] as const;
 
 export const services = [
-  {
-    slug: "creation-de-jardin",
-    title: "Création de jardin",
-    short: "Conception et aménagement complet de votre extérieur, du terrain nu au jardin fini.",
-    description:
-      "De l'étude du terrain au résultat final : plantations, engazonnement, massifs, allées. Un accompagnement complet pour donner vie à votre projet de jardin, quel que soit son point de départ.",
-    intro:
-      "Vous partez d'un terrain nu, d'un espace à repenser ou d'un jardin qui ne vous correspond plus ? La création de jardin consiste à concevoir et réaliser un extérieur sur mesure, adapté à la configuration de votre terrain, à votre budget et à vos usages.",
-    includes: [
-      "Étude du terrain et de son exposition",
-      "Conception du plan d'aménagement",
-      "Préparation et travail du sol",
-      "Plantations (arbres, arbustes, massifs)",
-      "Engazonnement",
-      "Création d'allées et de cheminements",
-    ],
-    method:
-      "Après une visite sur place pour comprendre votre terrain et vos envies, nous vous proposons un plan d'aménagement adapté. Les travaux sont ensuite réalisés par étapes, de la préparation du sol aux plantations et à l'engazonnement.",
-    faqExtra: {
-      question: "Peut-on créer un jardin à partir d'un terrain en friche ?",
-      answer:
-        "Oui, c'est un cas fréquent : le terrain est d'abord débroussaillé et préparé avant de passer à la conception du jardin.",
-    },
-  },
   {
     slug: "entretien-de-jardin",
     title: "Entretien régulier",
@@ -135,41 +111,20 @@ export const services = [
     },
   },
   {
-    slug: "amenagement-exterieur",
-    title: "Aménagement extérieur",
-    short: "Allées, cheminements et aménagements extérieurs pensés pour être vécus.",
-    description:
-      "Conception d'allées, cheminements et petits aménagements extérieurs pour profiter pleinement de votre jardin.",
-    intro:
-      "Un extérieur agréable à vivre passe souvent par de petits aménagements : une allée pour circuler facilement, un cheminement pour structurer l'espace. Nous concevons ces aménagements sur mesure.",
-    includes: [
-      "Création d'allées et de cheminements",
-      "Petits aménagements extérieurs",
-      "Conseils d'agencement adaptés à la configuration de votre terrain",
-    ],
-    method:
-      "Chaque aménagement est pensé en fonction de l'usage que vous en ferez et de la configuration existante de votre jardin.",
-    faqExtra: {
-      question: "Faut-il un projet de création de jardin complet pour vous solliciter ?",
-      answer:
-        "Non, un aménagement extérieur peut tout à fait être réalisé seul, indépendamment d'un projet de création de jardin.",
-    },
-  },
-  {
     slug: "debroussaillage",
     title: "Débroussaillage",
     short: "Remise en état de terrains envahis ou difficiles d'accès.",
     description:
-      "Débroussaillage de terrains, friches ou parcelles peu entretenues, pour préparer un nouveau projet ou répondre à une obligation légale de débroussaillement.",
+      "Débroussaillage de terrains, friches ou parcelles peu entretenues, pour remettre un espace en état ou répondre à une obligation légale de débroussaillement.",
     intro:
-      "Terrain en friche, parcelle envahie ou difficile d'accès : le débroussaillage permet de remettre un espace en état, que ce soit pour préparer un nouveau projet ou répondre à une obligation légale.",
+      "Terrain en friche, parcelle envahie ou difficile d'accès : le débroussaillage permet de remettre un espace en état et, si nécessaire, de répondre à une obligation légale.",
     includes: [
       "Débroussaillage de terrains, friches ou parcelles peu entretenues",
-      "Remise en état avant un nouveau projet d'aménagement",
+      "Remise en état d'un terrain envahi",
       "Intervention dans le cadre d'une obligation légale de débroussaillement",
     ],
     method:
-      "L'intervention est adaptée à l'état du terrain et à l'objectif final : simple remise en état ou préparation à un nouvel aménagement.",
+      "L'intervention est adaptée à l'état du terrain et à l'objectif final : remise en état ponctuelle ou entretien régulier.",
     faqExtra: {
       question: "Le débroussaillage est-il obligatoire sur mon terrain ?",
       answer:
