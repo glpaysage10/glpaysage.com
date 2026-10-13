@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import CtaButton from "@/components/CtaButton";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
@@ -27,14 +26,13 @@ const trustPoints = [
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-cream">
-        <div aria-hidden className="leaf-pattern pointer-events-none absolute inset-0" />
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:py-32">
+      <section className="bg-gradient-to-b from-emerald-50 to-cream">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-24">
           <div className="flex flex-col gap-6">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-semibold text-emerald-800">
               Paysagiste — {siteConfig.zones.join(" · ")}
             </span>
-            <h1 className="text-4xl font-semibold leading-tight text-stone-900 sm:text-5xl">
+            <h1 className="text-3xl font-semibold leading-tight text-stone-900 sm:text-4xl lg:text-[2.75rem]">
               Un jardin à votre image, du premier coup de bêche au dernier détail
             </h1>
             <p className="max-w-xl text-lg text-stone-600">
@@ -50,39 +48,35 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative isolate">
+          <div className="relative">
             <div
               aria-hidden
-              className="pointer-events-none absolute -inset-8 -z-10 rounded-[2.5rem] bg-emerald-400/60 blur-3xl"
+              className="pointer-events-none absolute -inset-4 -z-10 rounded-[2.5rem] bg-emerald-200/40 blur-2xl"
             />
-            <div
-              aria-hidden
-              className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-700 via-emerald-800 to-emerald-950 p-4 shadow-xl"
-            >
-              <div className="flex h-full w-full items-center justify-center rounded-2xl bg-white p-6">
-                <Image
-                  src="/logo.png"
-                  alt={siteConfig.name}
-                  width={400}
-                  height={346}
-                  className="h-full w-full object-contain"
-                />
-              </div>
+            <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50 via-white to-emerald-100 ring-1 ring-emerald-900/5">
+              <svg
+                viewBox="0 0 200 160"
+                className="h-1/2 w-1/2 text-emerald-800/60"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <path d="M100 150V70" />
+                <path d="M100 100c-20-5-35-25-32-50 25 0 42 18 42 40" />
+                <path d="M100 85c18-4 32-20 30-42-23 0-38 16-39 35" />
+                <path d="M100 70c-14-2-25-15-24-33 18 0 30 13 31 28" />
+                <ellipse cx="100" cy="153" rx="42" ry="5" fill="currentColor" stroke="none" opacity="0.1" />
+              </svg>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="leaf-pattern relative overflow-hidden bg-cream py-16 sm:py-20">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-[15%] top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-emerald-300/50 blur-2xl"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute right-[10%] top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-emerald-200/50 blur-2xl"
-        />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="bg-cream py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionHeading
             align="center"
             eyebrow="Pourquoi nous choisir"
@@ -99,17 +93,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-        <div aria-hidden className="leaf-pattern pointer-events-none absolute inset-0" />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-[8%] top-1/4 h-36 w-36 rounded-full bg-emerald-200/70 blur-2xl"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute right-[12%] bottom-1/4 h-44 w-44 rounded-full bg-emerald-200/60 blur-2xl"
-        />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionHeading
             eyebrow="Nos prestations"
             title="Des services pour chaque projet extérieur"
@@ -123,22 +108,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="leaf-pattern relative overflow-hidden bg-white py-16 sm:py-20">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-[6%] top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-emerald-200/80 blur-xl"
-        />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="relative flex flex-col items-center gap-4 overflow-hidden rounded-3xl bg-emerald-950 px-6 py-14 text-center text-white sm:px-16">
-            <div aria-hidden className="leaf-pattern-dark pointer-events-none absolute inset-0" />
-            <h2 className="relative text-3xl font-semibold sm:text-4xl">
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="flex flex-col items-center gap-4 rounded-3xl bg-emerald-950 px-6 py-14 text-center text-white sm:px-16">
+            <h2 className="text-3xl font-semibold sm:text-4xl">
               Prêt à démarrer votre projet ?
             </h2>
-            <p className="relative max-w-xl text-emerald-100/80">
+            <p className="max-w-xl text-emerald-100/80">
               Remplissez notre formulaire en quelques étapes : type de travaux, photos,
               budget. Nous vous recontactons avec un devis adapté.
             </p>
-            <CtaButton href="/devis" className="relative mt-2">
+            <CtaButton href="/devis" className="mt-2">
               Demander un devis gratuit
             </CtaButton>
           </div>
