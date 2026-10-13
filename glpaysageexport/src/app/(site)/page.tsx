@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CtaButton from "@/components/CtaButton";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
-import { services, siteConfig } from "@/lib/site-config";
+import Stars from "@/components/Stars";
+import { reviews, services, siteConfig, zoneNames } from "@/lib/site-config";
 
 export const metadata: Metadata = {
+  description: `${siteConfig.name}, paysagiste en ${zoneNames} : création et entretien de jardins, tonte, taille, aménagement extérieur. Devis gratuit.`,
   alternates: { canonical: "/" },
 };
 
@@ -16,6 +19,7 @@ const trustPoints = [
   {
     title: "Intervention locale",
     description: `Basés au cœur de la zone ${siteConfig.zones.join(", ")}.`,
+    href: "/zone-intervention",
   },
   {
     title: "Un interlocuteur unique",
@@ -59,7 +63,17 @@ export default function Home() {
             {trustPoints.map((point) => (
               <div key={point.title} className="flex flex-col gap-2 text-center sm:text-left">
                 <h3 className="text-lg font-semibold text-stone-900">{point.title}</h3>
-                <p className="text-sm text-stone-600">{point.description}</p>
+                <p className="text-sm text-stone-600">
+                  {point.description}
+                  {point.href && (
+                    <>
+                      {" "}
+                      <Link href={point.href} className="font-medium text-emerald-800 underline">
+                        Voir la zone détaillée
+                      </Link>
+                    </>
+                  )}
+                </p>
               </div>
             ))}
           </div>
@@ -77,6 +91,32 @@ export default function Home() {
             {services.slice(0, 8).map((service) => (
               <ServiceCard key={service.slug} service={service} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionHeading
+            align="center"
+            eyebrow="Avis clients"
+            title="Ce que disent nos clients"
+          />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {reviews.map((review) => (
+              <div
+                key={review.name}
+                className="flex items-center justify-between gap-2 rounded-2xl border border-emerald-900/10 bg-white p-5"
+              >
+                <span className="font-medium text-stone-900">{review.name}</span>
+                <Stars rating={review.rating} />
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Link href="/avis-clients" className="font-semibold text-emerald-800 underline">
+              Voir tous les avis clients
+            </Link>
           </div>
         </div>
       </section>

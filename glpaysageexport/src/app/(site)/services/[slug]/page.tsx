@@ -15,15 +15,14 @@ export async function generateMetadata({
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
 
-  const title = `${service.title} | ${siteConfig.name}`;
   const description = `${service.short} ${siteConfig.name} intervient en ${siteConfig.zones.join(", ")}.`;
 
   return {
-    title,
+    title: service.title,
     description,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
-      title,
+      title: `${service.title} — ${siteConfig.name}`,
       description,
       url: `${siteConfig.url}/services/${service.slug}`,
       siteName: siteConfig.name,

@@ -14,6 +14,7 @@ export default function ServicesPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <SectionHeading
+        as="h1"
         eyebrow="Nos services"
         title="Une prestation pour chaque besoin de votre extérieur"
         description="Que vous partiez d'un terrain nu ou souhaitiez simplement garder un jardin impeccable, nous adaptons notre intervention à votre projet. Cliquez sur une prestation pour en savoir plus."

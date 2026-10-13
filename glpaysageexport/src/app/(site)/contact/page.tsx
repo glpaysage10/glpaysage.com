@@ -13,6 +13,7 @@ export default function ContactPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <SectionHeading
+        as="h1"
         eyebrow="Contact"
         title="Parlons de votre projet"
         description="Le plus simple pour recevoir un devis chiffré reste notre formulaire dédié. Vous pouvez aussi nous contacter directement."

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import CtaButton from "@/components/CtaButton";
 import SectionHeading from "@/components/SectionHeading";
-import { siteConfig } from "@/lib/site-config";
+import Stars from "@/components/Stars";
+import { reviews, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Avis clients",
@@ -9,35 +10,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/avis-clients" },
 };
 
-const reviews = [
-  { name: "François D.", rating: 5 },
-  { name: "Pierre", rating: 5 },
-  { name: "Julien L.", rating: 5 },
-  { name: "Jean-Marie O.", rating: 5 },
-  { name: "Léonard", rating: 5 },
-];
-
-function Stars({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-0.5" aria-label={`Note : ${rating} sur 5`}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg
-          key={i}
-          viewBox="0 0 20 20"
-          className={`h-5 w-5 ${i < rating ? "fill-amber-400" : "fill-stone-200"}`}
-          aria-hidden
-        >
-          <path d="M10 1.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8L10 1.5z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
-
 export default function AvisClientsPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
       <SectionHeading
+        as="h1"
         align="center"
         eyebrow="Avis clients"
         title="Ce que disent nos clients"
