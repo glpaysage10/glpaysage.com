@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CtaButton from "@/components/CtaButton";
 import SectionHeading from "@/components/SectionHeading";
+import InterventionSection from "@/components/intervention/InterventionSection";
 import { services, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ZoneInterventionPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
+    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
       <SectionHeading
         as="h1"
         eyebrow="Zone d'intervention"
@@ -19,19 +20,8 @@ export default function ZoneInterventionPage() {
         description={`${siteConfig.name} intervient en ${siteConfig.zones.join(", ")}, pour des particuliers comme pour des professionnels.`}
       />
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2">
-        {siteConfig.zones.map((zone) => (
-          <div
-            key={zone}
-            className="rounded-2xl border border-emerald-900/10 bg-white p-6"
-          >
-            <h2 className="text-lg font-semibold text-stone-900">{zone}</h2>
-            <p className="mt-2 text-sm text-stone-600">
-              Création de jardin, entretien, tonte, taille, aménagement extérieur et
-              débroussaillage pour les particuliers et professionnels du secteur.
-            </p>
-          </div>
-        ))}
+      <div className="mt-12">
+        <InterventionSection />
       </div>
 
       <section className="mt-12">
