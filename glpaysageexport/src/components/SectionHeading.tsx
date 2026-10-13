@@ -3,6 +3,7 @@ type SectionHeadingProps = {
   title: string;
   description?: string;
   align?: "left" | "center";
+  as?: "h1" | "h2";
 };
 
 export default function SectionHeading({
@@ -10,6 +11,7 @@ export default function SectionHeading({
   title,
   description,
   align = "left",
+  as: Heading = "h2",
 }: SectionHeadingProps) {
   const alignment = align === "center" ? "text-center items-center mx-auto" : "text-left items-start";
 
@@ -20,7 +22,7 @@ export default function SectionHeading({
           {eyebrow}
         </span>
       )}
-      <h2 className="text-3xl font-semibold text-stone-900 sm:text-4xl">{title}</h2>
+      <Heading className="text-3xl font-semibold text-stone-900 sm:text-4xl">{title}</Heading>
       {description && <p className="text-base text-stone-600 sm:text-lg">{description}</p>}
     </div>
   );

@@ -13,6 +13,7 @@ export default function ZoneInterventionPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
       <SectionHeading
+        as="h1"
         eyebrow="Zone d'intervention"
         title="Où intervient GLPaysage ?"
         description={`${siteConfig.name} intervient en ${siteConfig.zones.join(", ")}, pour des particuliers comme pour des professionnels.`}

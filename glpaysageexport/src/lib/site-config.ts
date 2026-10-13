@@ -26,6 +26,22 @@ export const siteConfig = {
   },
 } as const;
 
+// Noms de départements sans le code postal, pour les usages où la longueur
+// compte (balise title, meta description) : dérivé de `zones` pour rester
+// toujours synchronisé avec la zone réelle.
+export const zoneNames = siteConfig.zones
+  .map((zone) => zone.replace(/\s*\(\d+\)/, ""))
+  .join(", ");
+
+// Avis clients réels (nom + note), sans texte d'avis inventé.
+export const reviews = [
+  { name: "François D.", rating: 5 },
+  { name: "Pierre", rating: 5 },
+  { name: "Julien L.", rating: 5 },
+  { name: "Jean-Marie O.", rating: 5 },
+  { name: "Léonard", rating: 5 },
+] as const;
+
 export const services = [
   {
     slug: "creation-de-jardin",

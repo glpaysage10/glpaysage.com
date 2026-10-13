@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
-import { services, siteConfig } from "@/lib/site-config";
+import { services, siteConfig, zoneNames } from "@/lib/site-config";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    default: `${siteConfig.name} — Paysagiste en ${zoneNames}`,
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -28,6 +28,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "fr_FR",
     type: "website",
+    images: [{ url: `${siteConfig.url}/logo.png`, width: 400, height: 346, alt: siteConfig.name }],
+  },
+  twitter: {
+    card: "summary",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/logo.png`],
   },
 };
 

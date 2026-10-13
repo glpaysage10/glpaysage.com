@@ -32,6 +32,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <SectionHeading
+        as="h1"
         eyebrow="À propos"
         title={`${siteConfig.name}, votre paysagiste de proximité`}
         description={`${siteConfig.name} (${siteConfig.legalStatus}), dirigé par ${siteConfig.legal.director}, accompagne particuliers et professionnels dans la création et l'entretien de leurs espaces extérieurs, en ${siteConfig.zones.join(", ")}.`}

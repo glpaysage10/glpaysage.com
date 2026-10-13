@@ -13,6 +13,7 @@ export default function DevisPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
       <SectionHeading
+        as="h1"
         eyebrow="Devis"
         title="Demandez votre devis gratuit"
         description="Quelques étapes simples pour nous transmettre toutes les infos utiles à un chiffrage rapide et précis."
