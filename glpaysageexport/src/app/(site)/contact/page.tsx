@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Contact",
   description: `Contactez ${siteConfig.name} par téléphone ou email, ou demandez directement un devis.`,
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
