@@ -17,8 +17,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-.env*.local
+# env files (peuvent contenir des secrets) : tout ignorer sauf l'exemple
+.env*
+!.env.example
 
 # typescript
 *.tsbuildinfo
