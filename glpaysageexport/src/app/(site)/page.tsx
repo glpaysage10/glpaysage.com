@@ -99,10 +99,15 @@ export default function Home() {
             title="Des services pour chaque projet extérieur"
             description="De l'entretien courant à la création complète de jardin, nous intervenons à chaque étape."
           />
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {services.slice(0, 8).map((service) => (
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
               <ServiceCard key={service.slug} service={service} />
             ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Link href="/services" className="font-semibold text-emerald-800 underline">
+              Voir toutes nos prestations
+            </Link>
           </div>
         </div>
       </section>
