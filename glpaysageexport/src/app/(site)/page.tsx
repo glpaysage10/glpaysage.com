@@ -30,8 +30,20 @@ const trustPoints = [
 export default function Home() {
   return (
     <>
-      <section className="bg-gradient-to-b from-emerald-50 to-cream">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-14 text-center sm:px-6 sm:py-16">
+      <section className="hero-gradient relative isolate overflow-hidden">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-20 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -left-20 -top-24 -z-10 h-72 w-80 rounded-full bg-emerald-800/10 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-24 -right-16 -z-10 h-80 w-72 rounded-full bg-emerald-700/10 blur-3xl"
+        />
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-14 text-center sm:px-6 sm:py-16">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-semibold text-emerald-800">
             Paysagiste — {siteConfig.zones.join(" · ")}
           </span>
