@@ -16,18 +16,31 @@ export async function generateMetadata({
   if (!service) return {};
 
   const description = `${service.short} ${siteConfig.name} intervient en ${siteConfig.zones.join(", ")}.`;
+  const ogTitle = `${service.title} — ${siteConfig.name}`;
 
   return {
     title: service.title,
     description,
     alternates: { canonical: `/services/${service.slug}` },
+    // `openGraph` et `twitter` remplacent entièrement ceux hérités du layout
+    // racine (pas de fusion profonde côté Next) : on les redéfinit donc ici
+    // en entier, image incluse, pour ne pas perdre l'aperçu au partage.
+    // Aucune photo de réalisation n'existe pour ce service : on réutilise le
+    // logo du site, déjà utilisé comme image par défaut sur tout le site.
     openGraph: {
-      title: `${service.title} — ${siteConfig.name}`,
+      title: ogTitle,
       description,
       url: `${siteConfig.url}/services/${service.slug}`,
       siteName: siteConfig.name,
       locale: "fr_FR",
       type: "website",
+      images: [{ url: `${siteConfig.url}/logo.png`, width: 400, height: 346, alt: siteConfig.name }],
+    },
+    twitter: {
+      card: "summary",
+      title: ogTitle,
+      description,
+      images: [`${siteConfig.url}/logo.png`],
     },
   };
 }
