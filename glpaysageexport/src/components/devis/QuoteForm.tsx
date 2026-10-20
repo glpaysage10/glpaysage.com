@@ -159,7 +159,7 @@ export default function QuoteForm() {
             type="button"
             onClick={goBack}
             disabled={submitting}
-            className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-stone-600 hover:text-stone-900 disabled:opacity-50"
+            className="inline-flex min-h-12 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-stone-600 hover:text-stone-900 disabled:opacity-50"
           >
             Retour
           </button>
@@ -171,7 +171,7 @@ export default function QuoteForm() {
           <button
             type="button"
             onClick={goNext}
-            className="inline-flex items-center justify-center rounded-full bg-emerald-800 px-8 py-3 text-sm font-semibold text-white hover:bg-emerald-900"
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-8 py-3 text-sm font-semibold text-white hover:bg-emerald-900"
           >
             Continuer
           </button>
@@ -180,7 +180,7 @@ export default function QuoteForm() {
             type="button"
             onClick={handleSubmit}
             disabled={submitting}
-            className="inline-flex items-center justify-center rounded-full bg-emerald-800 px-8 py-3 text-sm font-semibold text-white hover:bg-emerald-900 disabled:opacity-60"
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-8 py-3 text-sm font-semibold text-white hover:bg-emerald-900 disabled:opacity-60"
           >
             {submitting ? "Envoi en cours..." : "Envoyer ma demande de devis"}
           </button>

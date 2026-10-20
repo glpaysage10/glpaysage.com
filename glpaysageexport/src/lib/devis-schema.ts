@@ -1,9 +1,11 @@
 import { z } from "zod";
 
 export const prestationOptions = [
+  { value: "creation-de-jardin", label: "Création de jardin" },
   { value: "entretien-regulier", label: "Entretien régulier" },
   { value: "tonte", label: "Tonte" },
   { value: "taille-elagage", label: "Taille & élagage de petits arbres" },
+  { value: "amenagement-exterieur", label: "Aménagement extérieur" },
   { value: "debroussaillage", label: "Débroussaillage" },
 ] as const;
 

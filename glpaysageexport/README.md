@@ -1,7 +1,7 @@
 # GL Paysage — site vitrine
 
-Site vitrine pour GL Paysage, entreprise de paysagisme (entreprise individuelle)
-intervenant en Aube (10), Yonne (89) et Seine-et-Marne (77).
+Site vitrine pour GL Paysage, entreprise individuelle d'entretien de jardins
+intervenant dans un rayon annoncé de 50 km autour de Nogent-sur-Seine.
 
 Le cahier des charges complet et sa version simplifiée sont dans `docs/`.
 

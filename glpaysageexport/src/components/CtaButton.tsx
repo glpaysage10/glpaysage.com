@@ -16,7 +16,7 @@ export default function CtaButton({
   ...props
 }: CtaButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700";
+    "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700";
   const styles =
     variant === "primary"
       ? "bg-emerald-800 text-white hover:bg-emerald-900"

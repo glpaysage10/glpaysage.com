@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
-import { services, siteConfig, zoneNames } from "@/lib/site-config";
+import { services, siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Entretien de jardins en ${zoneNames}`,
+    default: `${siteConfig.name} — Entretien de jardins autour de ${siteConfig.serviceArea.centerName}`,
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "fr_FR",
     type: "website",
-    images: [{ url: `${siteConfig.url}/logo.png`, width: 400, height: 346, alt: siteConfig.name }],
+    images: [{ url: `${siteConfig.url}/hero-jardin.webp`, width: 1672, height: 941, alt: "Image d’ambiance d’un jardin paysager" }],
   },
   twitter: {
     card: "summary",
@@ -52,13 +52,19 @@ const localBusinessJsonLd = {
   image: `${siteConfig.url}/logo.png`,
   address: {
     "@type": "PostalAddress",
-    streetAddress: siteConfig.legal.headquartersAddress,
+    addressLocality: siteConfig.serviceArea.centerName,
+    postalCode: siteConfig.serviceArea.postalCode,
     addressCountry: "FR",
   },
-  areaServed: siteConfig.zones.map((zone) => ({
-    "@type": "AdministrativeArea",
-    name: zone,
-  })),
+  areaServed: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: siteConfig.serviceArea.center[0],
+      longitude: siteConfig.serviceArea.center[1],
+    },
+    geoRadius: siteConfig.serviceArea.radiusMeters,
+  },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Prestations",

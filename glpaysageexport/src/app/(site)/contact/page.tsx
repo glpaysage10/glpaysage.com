@@ -24,7 +24,7 @@ export default function ContactPage() {
           <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">Téléphone</h3>
           <a
             href={`tel:${siteConfig.phoneHref}`}
-            className="mt-2 block text-xl font-semibold text-stone-900 hover:text-emerald-800"
+            className="mt-2 inline-flex min-h-12 items-center text-xl font-semibold text-stone-900 hover:text-emerald-800"
           >
             {siteConfig.phone}
           </a>
@@ -33,7 +33,7 @@ export default function ContactPage() {
           <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">Email</h3>
           <a
             href={`mailto:${siteConfig.email}`}
-            className="mt-2 block text-xl font-semibold text-stone-900 hover:text-emerald-800"
+            className="mt-2 inline-flex min-h-12 items-center text-xl font-semibold text-stone-900 hover:text-emerald-800"
           >
             {siteConfig.email}
           </a>
@@ -42,7 +42,7 @@ export default function ContactPage() {
           <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
             Zone d&apos;intervention
           </h3>
-          <p className="mt-2 text-base text-stone-700">{siteConfig.zones.join(", ")}</p>
+          <p className="mt-2 text-base text-stone-700">{siteConfig.serviceArea.label}</p>
         </div>
       </div>
 

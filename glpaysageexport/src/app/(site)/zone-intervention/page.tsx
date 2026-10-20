@@ -5,8 +5,8 @@ import InterventionSection from "@/components/intervention/InterventionSection";
 import { services, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Zone d'intervention",
-  description: `Découvrez les départements où ${siteConfig.name} intervient : ${siteConfig.zones.join(", ")}.`,
+  title: `Zone d'intervention autour de ${siteConfig.serviceArea.centerName}`,
+  description: `Vous cherchez un paysagiste autour de ${siteConfig.serviceArea.centerName} ? GLPaysage étudie les demandes d'entretien de jardin dans ${siteConfig.serviceArea.label}.`,
   alternates: { canonical: "/zone-intervention" },
 };
 
@@ -16,8 +16,8 @@ export default function ZoneInterventionPage() {
       <SectionHeading
         as="h1"
         eyebrow="Zone d'intervention"
-        title="Où intervient GLPaysage ?"
-        description={`${siteConfig.name} intervient en ${siteConfig.zones.join(", ")}, pour des particuliers comme pour des professionnels.`}
+        title="Une zone d’intervention autour de Nogent-sur-Seine"
+        description={`${siteConfig.name} entretient les jardins et espaces verts dans ${siteConfig.serviceArea.label}, pour les particuliers et les professionnels.`}
       />
 
       <div className="mt-12">
@@ -26,14 +26,14 @@ export default function ZoneInterventionPage() {
 
       <section className="mt-12">
         <h2 className="text-xl font-semibold text-stone-900">
-          Toutes nos prestations, où que vous soyez dans la zone
+          Nos prestations dans la zone d&apos;intervention
         </h2>
         <ul className="mt-4 flex flex-wrap gap-2">
           {services.map((service) => (
             <li key={service.slug}>
               <a
                 href={`/services/${service.slug}`}
-                className="inline-flex rounded-full bg-emerald-50 px-4 py-1.5 text-sm font-medium text-emerald-800 hover:bg-emerald-100"
+                className="inline-flex min-h-12 items-center rounded-full bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800 hover:bg-emerald-100"
               >
                 {service.title}
               </a>

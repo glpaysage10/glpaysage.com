@@ -32,8 +32,8 @@ export default function Footer() {
           </p>
           <p className="mt-4 text-sm text-emerald-100/80">
             Zone d&apos;intervention :{" "}
-            <Link href="/zone-intervention" className="underline hover:text-white">
-              {siteConfig.zones.join(", ")}
+            <Link href="/zone-intervention" className="inline-flex min-h-12 items-center py-3 underline hover:text-white">
+              {siteConfig.serviceArea.label}
             </Link>
             .
           </p>
@@ -44,7 +44,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2">
             {footerLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-sm text-emerald-100/80 hover:text-white">
+                <Link href={link.href} className="inline-flex min-h-12 items-center py-3 text-sm text-emerald-100/80 hover:text-white">
                   {link.label}
                 </Link>
               </li>
@@ -56,12 +56,12 @@ export default function Footer() {
           <p className="text-sm font-semibold uppercase tracking-wide text-emerald-200">Contact</p>
           <ul className="mt-4 space-y-2 text-sm text-emerald-100/80">
             <li>
-              <a href={`tel:${siteConfig.phoneHref}`} className="hover:text-white">
+              <a href={`tel:${siteConfig.phoneHref}`} className="inline-flex min-h-12 items-center py-3 hover:text-white">
                 {siteConfig.phone}
               </a>
             </li>
             <li>
-              <a href={`mailto:${siteConfig.email}`} className="hover:text-white">
+              <a href={`mailto:${siteConfig.email}`} className="inline-flex min-h-12 items-center py-3 hover:text-white">
                 {siteConfig.email}
               </a>
             </li>
@@ -69,7 +69,7 @@ export default function Footer() {
           <ul className="mt-6 flex gap-4 text-sm text-emerald-100/60">
             {legalLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="hover:text-white">
+                <Link href={link.href} className="inline-flex min-h-12 items-center py-3 hover:text-white">
                   {link.label}
                 </Link>
               </li>
@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 px-4 py-4 text-center text-xs text-emerald-100/60 sm:px-6">
+      <div className="border-t border-white/10 px-4 py-4 text-center text-sm text-emerald-100/70 sm:px-6">
         © {new Date().getFullYear()} {siteConfig.name} — {siteConfig.legalStatus}
       </div>
     </footer>

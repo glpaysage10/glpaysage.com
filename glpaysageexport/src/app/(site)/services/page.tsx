@@ -5,8 +5,8 @@ import ServiceCard from "@/components/ServiceCard";
 import { services, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Nos services",
-  description: `Toutes les prestations d'entretien de jardins et d'espaces verts proposées par ${siteConfig.name} en ${siteConfig.zones.join(", ")}.`,
+  title: `Prestations de paysagiste à ${siteConfig.serviceArea.centerName}`,
+  description: `Entretien de jardin, tonte de pelouse, taille de haies, élagage de petits arbres et débroussaillage autour de ${siteConfig.serviceArea.centerName}. Demandez un devis gratuit à ${siteConfig.name}.`,
   alternates: { canonical: "/services" },
 };
 

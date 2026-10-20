@@ -3,7 +3,7 @@ const STEP_LABELS = ["Travaux", "Chantier", "Photos", "Budget", "Coordonnées"];
 export default function StepIndicator({ step }: { step: number }) {
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex items-center justify-between text-xs font-semibold text-stone-500">
+      <div className="flex items-center justify-between text-sm font-semibold text-stone-600">
         <span>
           Étape {step} sur {STEP_LABELS.length}
         </span>

@@ -27,7 +27,7 @@ export default function Step1Prestations({ data, errors, onChange }: StepProps) 
           return (
             <label
               key={option.value}
-              className={`flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 transition-colors ${
+              className={`flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 transition-colors ${
                 checked
                   ? "border-emerald-700 bg-emerald-50"
                   : "border-stone-300 bg-white hover:border-emerald-700/50"

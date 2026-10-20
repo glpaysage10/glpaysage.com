@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-emerald-900/10 bg-cream/80 backdrop-blur supports-[backdrop-filter]:bg-cream/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight text-emerald-900" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex min-h-12 items-center gap-2 text-lg font-bold tracking-tight text-emerald-900" onClick={() => setOpen(false)}>
           <Image src="/logo.png" alt={siteConfig.name} width={40} height={35} className="h-9 w-auto" priority />
           {siteConfig.name}
         </Link>
@@ -58,7 +58,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-emerald-900 lg:hidden"
+          className="inline-flex h-12 w-12 items-center justify-center rounded-md text-emerald-900 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
@@ -82,7 +82,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`rounded-md px-3 py-2.5 text-base font-medium ${
+                className={`flex min-h-12 items-center rounded-md px-3 py-3 text-base font-medium ${
                   pathname === link.href
                     ? "bg-emerald-800/10 text-emerald-900"
                     : "text-stone-700 hover:bg-emerald-800/5"
@@ -93,14 +93,14 @@ export default function Header() {
             ))}
             <a
               href={`tel:${siteConfig.phoneHref}`}
-              className="mt-2 rounded-md px-3 py-2.5 text-base font-semibold text-emerald-900"
+              className="mt-2 flex min-h-12 items-center rounded-md px-3 py-3 text-base font-semibold text-emerald-900"
             >
               {siteConfig.phone}
             </a>
             <Link
               href="/devis"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-emerald-800 px-5 py-3 text-base font-semibold text-white"
+              className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-5 py-3 text-base font-semibold text-white"
             >
               Demander un devis
             </Link>

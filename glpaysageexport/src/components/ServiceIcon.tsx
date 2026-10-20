@@ -14,9 +14,7 @@ const sharedProps = {
   "aria-hidden": true as const,
 };
 
-// Icône générique de secours (pousse), utilisée si aucune icône dédiée
-// n'existe pour le slug fourni.
-function SproutIcon() {
+function CreationIcon() {
   return (
     <svg {...sharedProps}>
       <path d="M12 21V11" />
@@ -58,6 +56,16 @@ function TailleIcon() {
   );
 }
 
+function AmenagementIcon() {
+  return (
+    <svg {...sharedProps}>
+      <rect x="2.5" y="14" width="6" height="3.2" rx="1.2" />
+      <rect x="9.5" y="10.5" width="6" height="3.2" rx="1.2" />
+      <rect x="16.5" y="7" width="5" height="3.2" rx="1.2" />
+    </svg>
+  );
+}
+
 function DebroussaillageIcon() {
   return (
     <svg {...sharedProps}>
@@ -70,15 +78,17 @@ function DebroussaillageIcon() {
   );
 }
 
-const ICONS: Record<string, typeof SproutIcon> = {
+const ICONS: Record<string, typeof CreationIcon> = {
+  "creation-de-jardin": CreationIcon,
   "entretien-de-jardin": EntretienIcon,
   tonte: TonteIcon,
   "taille-elagage": TailleIcon,
+  "amenagement-exterieur": AmenagementIcon,
   debroussaillage: DebroussaillageIcon,
 };
 
 export default function ServiceIcon({ slug, className }: ServiceIconProps) {
-  const Icon = ICONS[slug] ?? SproutIcon;
+  const Icon = ICONS[slug] ?? CreationIcon;
   return (
     <span
       className={`inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ${className ?? ""}`}

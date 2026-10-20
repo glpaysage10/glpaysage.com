@@ -3,16 +3,23 @@
 
 export const siteConfig = {
   name: "GLPaysage",
-  tagline: "Entretien de jardins et espaces verts en Aube, Yonne, Seine-et-Marne et Marne",
+  tagline: "Paysagiste à Nogent-sur-Seine et alentours",
   description:
-    "GLPaysage, entreprise d'entretien de jardins et d'espaces verts en Aube (10), Yonne (89), Seine-et-Marne (77) et Marne (51) : tonte, taille, débroussaillage.",
+    "GLPaysage, paysagiste à Nogent-sur-Seine et alentours : entretien de jardins, tonte, taille de haies, élagage de petits arbres et débroussaillage dans un rayon de 50 km. Devis gratuit.",
   url: "https://www.glpaysage.com",
   phone: "06 47 15 70 52",
   phoneHref: "+33647157052",
   // TODO: remplacer par une adresse @glpaysage.com une fois la messagerie du domaine configurée
   email: "glpaysage10@gmail.com",
   legalStatus: "Entrepreneur individuel",
-  zones: ["Aube (10)", "Yonne (89)", "Seine-et-Marne (77)", "Marne (51)"],
+  serviceArea: {
+    centerName: "Nogent-sur-Seine",
+    postalCode: "10400",
+    radiusKm: 50,
+    radiusMeters: 50_000,
+    center: [48.49222, 3.50139] as [number, number],
+    label: "un rayon de 50 km autour de Nogent-sur-Seine",
+  },
   legal: {
     director: "Gauthier Lauxerrois",
     siren: "990 003 550",
@@ -25,22 +32,6 @@ export const siteConfig = {
     instagram: "", // TODO
   },
 } as const;
-
-// Noms de départements sans le code postal, pour les usages où la longueur
-// compte (balise title, meta description) : dérivé de `zones` pour rester
-// toujours synchronisé avec la zone réelle.
-export const zoneNames = siteConfig.zones
-  .map((zone) => zone.replace(/\s*\(\d+\)/, ""))
-  .join(", ");
-
-// Avis clients réels (nom + note), sans texte d'avis inventé.
-export const reviews = [
-  { name: "François D.", rating: 5 },
-  { name: "Pierre", rating: 5 },
-  { name: "Julien L.", rating: 5 },
-  { name: "Jean-Marie O.", rating: 5 },
-  { name: "Léonard", rating: 5 },
-] as const;
 
 export const services = [
   {
@@ -140,6 +131,6 @@ export const servicesFaqCommon = [
   },
   {
     question: "Dans quelles zones intervenez-vous ?",
-    answer: `${siteConfig.name} intervient en ${siteConfig.zones.join(", ")}.`,
+    answer: `${siteConfig.name} intervient dans ${siteConfig.serviceArea.label}.`,
   },
 ] as const;

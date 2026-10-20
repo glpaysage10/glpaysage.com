@@ -15,11 +15,12 @@ export async function generateMetadata({
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
 
-  const description = `${service.short} ${siteConfig.name} intervient en ${siteConfig.zones.join(", ")}.`;
-  const ogTitle = `${service.title} — ${siteConfig.name}`;
+  const description = `${service.short} ${siteConfig.name} intervient autour de ${siteConfig.serviceArea.centerName}.`;
+  const seoTitle = `${service.title} autour de ${siteConfig.serviceArea.centerName}`;
+  const ogTitle = `${seoTitle} — ${siteConfig.name}`;
 
   return {
-    title: service.title,
+    title: seoTitle,
     description,
     alternates: { canonical: `/services/${service.slug}` },
     // `openGraph` et `twitter` remplacent entièrement ceux hérités du layout
@@ -63,10 +64,15 @@ export default async function ServiceDetailPage({
       "@type": "LocalBusiness",
       name: siteConfig.name,
     },
-    areaServed: siteConfig.zones.map((zone) => ({
-      "@type": "AdministrativeArea",
-      name: zone,
-    })),
+    areaServed: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: siteConfig.serviceArea.center[0],
+        longitude: siteConfig.serviceArea.center[1],
+      },
+      geoRadius: siteConfig.serviceArea.radiusMeters,
+    },
     url: `${siteConfig.url}/services/${service.slug}`,
   };
 
@@ -113,11 +119,11 @@ export default async function ServiceDetailPage({
       />
 
       <nav aria-label="Fil d'Ariane" className="text-sm text-stone-500">
-        <Link href="/" className="hover:text-emerald-800 hover:underline">
+        <Link href="/" className="inline-flex min-h-12 items-center hover:text-emerald-800 hover:underline">
           Accueil
         </Link>
         {" / "}
-        <Link href="/services" className="hover:text-emerald-800 hover:underline">
+        <Link href="/services" className="inline-flex min-h-12 items-center hover:text-emerald-800 hover:underline">
           Services
         </Link>
         {" / "}
@@ -155,9 +161,9 @@ export default async function ServiceDetailPage({
       <section className="mt-10 rounded-2xl border border-emerald-900/10 bg-emerald-50 p-6">
         <h2 className="text-xl font-semibold text-stone-900">Zone d&apos;intervention</h2>
         <p className="mt-3 text-stone-700">
-          {siteConfig.name} propose ce service en {siteConfig.zones.join(", ")}.
+          {siteConfig.name} propose ce service dans {siteConfig.serviceArea.label}.
           Retrouvez le détail sur notre page{" "}
-          <Link href="/zone-intervention" className="font-medium text-emerald-800 underline">
+          <Link href="/zone-intervention" className="inline-flex min-h-12 items-center font-medium text-emerald-800 underline">
             Zone d&apos;intervention
           </Link>
           .
@@ -183,7 +189,7 @@ export default async function ServiceDetailPage({
             <li key={s.slug}>
               <Link
                 href={`/services/${s.slug}`}
-                className="inline-flex rounded-full bg-white px-4 py-1.5 text-sm font-medium text-emerald-800 ring-1 ring-inset ring-emerald-800/20 hover:bg-emerald-50"
+                className="inline-flex min-h-12 items-center rounded-full bg-white px-4 py-3 text-sm font-medium text-emerald-800 ring-1 ring-inset ring-emerald-800/20 hover:bg-emerald-50"
               >
                 {s.title}
               </Link>

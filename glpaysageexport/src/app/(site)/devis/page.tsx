@@ -25,7 +25,7 @@ export default function DevisPage() {
 
       <p className="mt-8 text-center text-sm text-stone-500">
         Vous préférez nous appeler directement ?{" "}
-        <a href={`tel:${siteConfig.phoneHref}`} className="font-semibold text-emerald-800 hover:underline">
+        <a href={`tel:${siteConfig.phoneHref}`} className="inline-flex min-h-12 items-center px-2 font-semibold text-emerald-800 hover:underline">
           {siteConfig.phone}
         </a>
       </p>

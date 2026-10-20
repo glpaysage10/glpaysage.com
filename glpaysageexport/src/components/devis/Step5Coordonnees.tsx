@@ -71,7 +71,7 @@ export default function Step5Coordonnees({ data, errors, onChange }: StepProps) 
         />
       </div>
 
-      <label className="flex items-start gap-3 rounded-xl border border-stone-300 bg-white px-4 py-3">
+      <label className="flex min-h-12 items-start gap-3 rounded-xl border border-stone-300 bg-white px-4 py-3">
         <input
           type="checkbox"
           className="mt-0.5 h-4 w-4 rounded border-stone-400 text-emerald-800 focus:ring-emerald-700"

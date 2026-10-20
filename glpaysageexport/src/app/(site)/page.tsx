@@ -3,11 +3,11 @@ import Link from "next/link";
 import CtaButton from "@/components/CtaButton";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
-import Stars from "@/components/Stars";
-import { reviews, services, siteConfig, zoneNames } from "@/lib/site-config";
+import { services, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  description: `${siteConfig.name}, entretien de jardins et espaces verts en ${zoneNames} : tonte, taille, élagage, débroussaillage. Devis gratuit.`,
+  title: `Paysagiste à ${siteConfig.serviceArea.centerName} et alentours`,
+  description: siteConfig.description,
   alternates: { canonical: "/" },
 };
 
@@ -18,7 +18,8 @@ const trustPoints = [
   },
   {
     title: "Intervention locale",
-    description: `Basés au cœur de la zone ${siteConfig.zones.join(", ")}.`,
+    description:
+      "Chaque demande est étudiée selon la commune, l'accès au terrain et la nature des travaux.",
     href: "/zone-intervention",
   },
   {
@@ -31,29 +32,18 @@ export default function Home() {
   return (
     <>
       <section className="hero-gradient relative isolate overflow-hidden">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-1/2 top-20 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -left-20 -top-24 -z-10 h-72 w-80 rounded-full bg-emerald-800/10 blur-3xl"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-24 -right-16 -z-10 h-80 w-72 rounded-full bg-emerald-700/10 blur-3xl"
-        />
         <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-14 text-center sm:px-6 sm:py-16">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-semibold text-emerald-800">
-            Entretien de jardins — {siteConfig.zones.join(" · ")}
+            Zone d’intervention · 50 km autour de {siteConfig.serviceArea.centerName}
           </span>
           <h1 className="max-w-2xl text-3xl font-semibold leading-tight text-stone-900 sm:text-4xl lg:text-5xl">
-            Un jardin impeccable, entretenu avec soin toute l&apos;année
+            Du premier coup de bêche au dernier détail
           </h1>
           <p className="max-w-xl text-lg text-stone-600">
-            {siteConfig.name} entretient vos jardins et espaces verts tout au long de
-            l&apos;année. Décrivez votre besoin en quelques étapes, nous revenons vers
-            vous avec un devis adapté.
+            Paysagiste autour de {siteConfig.serviceArea.centerName}, {siteConfig.name}
+            entretient jardins et espaces verts : tonte, taille, élagage de petits
+            arbres et débroussaillage. Chaque demande est étudiée selon la commune et
+            le projet.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <CtaButton href="/devis">Demander un devis gratuit</CtaButton>
@@ -105,7 +95,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-8 flex justify-center">
-            <Link href="/services" className="font-semibold text-emerald-800 underline">
+            <Link href="/services" className="inline-flex min-h-12 items-center px-3 font-semibold text-emerald-800 underline">
               Voir toutes nos prestations
             </Link>
           </div>
@@ -116,23 +106,16 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionHeading
             align="center"
-            eyebrow="Avis clients"
-            title="Ce que disent nos clients"
+            eyebrow="À votre écoute"
+            title="Une question avant de demander un devis ?"
+            description="Appelez-nous ou écrivez-nous pour parler de votre jardin et vérifier votre projet."
           />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {reviews.map((review) => (
-              <div
-                key={review.name}
-                className="flex items-center justify-between gap-2 rounded-2xl border border-emerald-900/10 bg-white p-5"
-              >
-                <span className="font-medium text-stone-900">{review.name}</span>
-                <Stars rating={review.rating} />
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 flex justify-center">
-            <Link href="/avis-clients" className="font-semibold text-emerald-800 underline">
-              Voir tous les avis clients
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <a href={`tel:${siteConfig.phoneHref}`} className="inline-flex min-h-12 items-center px-3 font-semibold text-emerald-800 underline">
+              Appeler le {siteConfig.phone}
+            </a>
+            <Link href="/contact" className="inline-flex min-h-12 items-center px-3 font-semibold text-emerald-800 underline">
+              Nous contacter
             </Link>
           </div>
         </div>

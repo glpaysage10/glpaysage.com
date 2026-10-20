@@ -64,7 +64,7 @@ export default function Step3Photos({ data, errors, onChange }: StepProps) {
         <span className="text-sm font-semibold text-emerald-800">
           {processing ? "Traitement des photos en cours..." : "Cliquez pour ajouter des photos"}
         </span>
-        <span className="text-xs text-stone-500">
+        <span className="text-sm text-stone-600">
           {data.photos.length}/{MAX_PHOTOS} photos ajoutées
         </span>
         <input
@@ -96,7 +96,7 @@ export default function Step3Photos({ data, errors, onChange }: StepProps) {
               <button
                 type="button"
                 onClick={() => removePhoto(index)}
-                className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-black/60 text-xs font-bold text-white opacity-90 hover:bg-black/80"
+                className="absolute right-1 top-1 flex h-12 w-12 items-center justify-center rounded-full bg-black/70 text-xl font-bold text-white opacity-95 hover:bg-black/90"
                 aria-label={`Retirer la photo ${index + 1}`}
               >
                 ×

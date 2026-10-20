@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "À propos",
-  description: `Découvrez ${siteConfig.name}, entreprise d'entretien de jardins et d'espaces verts intervenant en ${siteConfig.zones.join(", ")}.`,
+  description: `Découvrez ${siteConfig.name}, entreprise d'entretien de jardins et d'espaces verts dans ${siteConfig.serviceArea.label}.`,
   alternates: { canonical: "/a-propos" },
 };
 
@@ -24,7 +24,7 @@ const values = [
   {
     title: "Proximité",
     description:
-      "Une entreprise locale, disponible et réactive sur toute sa zone d'intervention.",
+      `Une zone d'intervention définie dans ${siteConfig.serviceArea.label}.`,
   },
 ];
 
@@ -35,7 +35,7 @@ export default function AboutPage() {
         as="h1"
         eyebrow="À propos"
         title={`${siteConfig.name}, votre spécialiste de l'entretien de jardin`}
-        description={`${siteConfig.name} (${siteConfig.legalStatus}), dirigé par ${siteConfig.legal.director}, accompagne particuliers et professionnels dans l'entretien de leurs jardins et espaces verts, en ${siteConfig.zones.join(", ")}.`}
+        description={`${siteConfig.name} (${siteConfig.legalStatus}), dirigé par ${siteConfig.legal.director}, accompagne particuliers et professionnels dans l'entretien de leurs jardins et espaces verts, dans ${siteConfig.serviceArea.label}.`}
       />
 
       <div className="mt-12 grid gap-6 sm:grid-cols-3">
@@ -50,21 +50,14 @@ export default function AboutPage() {
       <div className="mt-16 flex flex-col items-center text-center">
         <h2 className="text-2xl font-semibold text-stone-900">Zone d&apos;intervention</h2>
         <p className="mt-3 text-stone-600">
-          {siteConfig.name} intervient dans les départements suivants :
+          {siteConfig.name} intervient dans :
         </p>
-        <ul className="mt-3 flex flex-wrap justify-center gap-2">
-          {siteConfig.zones.map((zone) => (
-            <li
-              key={zone}
-              className="rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-medium text-emerald-800"
-            >
-              {zone}
-            </li>
-          ))}
-        </ul>
+        <p className="mt-3 rounded-full bg-emerald-800/10 px-4 py-1.5 text-sm font-medium text-emerald-800">
+          {siteConfig.serviceArea.label}
+        </p>
         <Link
           href="/zone-intervention"
-          className="mt-4 text-sm font-semibold text-emerald-800 underline hover:text-emerald-900"
+          className="mt-4 inline-flex min-h-12 items-center text-sm font-semibold text-emerald-800 underline hover:text-emerald-900"
         >
           Voir le détail de la zone d&apos;intervention
         </Link>
