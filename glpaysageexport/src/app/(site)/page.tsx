@@ -40,10 +40,9 @@ export default function Home() {
             Du premier coup de bêche au dernier détail
           </h1>
           <p className="max-w-xl text-lg text-stone-600">
-            Paysagiste autour de {siteConfig.serviceArea.centerName}, {siteConfig.name}
-            entretient jardins et espaces verts : tonte, taille, élagage de petits
-            arbres et débroussaillage. Chaque demande est étudiée selon la commune et
-            le projet.
+            Paysagiste autour de {siteConfig.serviceArea.centerName}, {siteConfig.name}{" "}
+            entretient les jardins et espaces verts : tonte, taille, élagage de petits
+            arbres et débroussaillage.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <CtaButton href="/devis">Demander un devis gratuit</CtaButton>
